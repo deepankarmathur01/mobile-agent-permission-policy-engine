@@ -1,0 +1,16 @@
+build:
+  maxIssues: 0
+
+complexity:
+  active: true
+  LongMethod:
+    threshold: 60
+  LongParameterList:
+    threshold: 6
+  LargeClass:
+    threshold: 600
+
+style:
+  active: true
+  MaxLineLength:
+    maxLineLength: 120
