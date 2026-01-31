@@ -1,0 +1,11 @@
+version: 1
+default: deny
+rules:
+  - id: allow_calendar_read
+    effect: allow
+    match:
+      skillId: calendar.read
+    constraints:
+      readCalendar: true
+    metadata:
+      description: Allow reading calendar events

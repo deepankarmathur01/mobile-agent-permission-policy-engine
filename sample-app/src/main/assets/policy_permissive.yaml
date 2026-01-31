@@ -1,0 +1,37 @@
+version: 1
+default: deny
+rules:
+  - id: allow_calendar_read
+    effect: allow
+    match:
+      skillId: calendar.read
+    constraints:
+      readCalendar: true
+    metadata:
+      description: Allow reading calendar events
+
+  - id: allow_notification_summary
+    effect: allow
+    match:
+      skillId: notification.summary
+    constraints:
+      readNotifications:
+        apps: []
+    metadata:
+      description: Allow reading all notifications
+
+  - id: allow_webhook_to_example
+    effect: allow
+    match:
+      skillId: webhook.call
+    constraints:
+      network:
+        hosts:
+          - example.com
+          - webhook.site
+          - httpbin.org
+        methods:
+          - POST
+          - GET
+    metadata:
+      description: Allow webhook calls to safe test endpoints
